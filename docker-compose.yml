@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  honeypot:
+    build: .
+    container_name: honeyguard-core
+    ports:
+      - "2222:2222"  # SSH Honeypot
+      - "8080:8080"  # HTTP Honeypot (diperbaiki dari port 80 ke 8080)
+    environment:
+      - SECRET_KEY=${SECRET_KEY:-default_secret_key}  # Gunakan nilai .env atau default
+      - LOG_ENCRYPTION_KEY=${LOG_ENCRYPTION_KEY:-default_encryption_key}
+    volumes:
+      - ./logs:/app/logs  # Persistent logs
+      - .:/app  # Sinkronisasi kode aplikasi
+    networks:
+      - honeyguard-net
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"  # Batasi ukuran log
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080"]  # Cek status HTTP honeypot
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  web:
+    build: .
+    container_name: honeyguard-web
+    ports:
+      - "5000:5000"  # Web dashboard
+    environment:
+      - FLASK_ENV=production
+    depends_on:
+      - honeypot
+    volumes:
+      - .:/app  # Sinkronisasi kode aplikasi
+    networks:
+      - honeyguard-net
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"  # Batasi ukuran log
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000"]  # Cek status web dashboard
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  honeyguard-net:
+    driver: bridge

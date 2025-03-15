@@ -1,0 +1,5 @@
+# File ini kosong untuk menandai direktori sebagai Python package
+# Bisa juga diisi dengan import untuk memudahkan akses:
+from .encryption import encrypt_log, decrypt_log
+
+__all__ = ['encrypt_log', 'decrypt_log']

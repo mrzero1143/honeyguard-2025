@@ -1,0 +1,67 @@
+/* Responsive Table */
+.table-responsive {
+    max-height: 600px;
+    overflow-y: auto;
+    overflow-x: auto; /* Tambahkan scrollbar horizontal jika tabel melebihi lebar */
+    border: 1px solid #ddd; /* Tambahkan border untuk mempercantik tabel */
+    border-radius: 8px; /* Sudut tabel lebih halus */
+}
+
+/* Badge Styling */
+.badge {
+    font-size: 0.9em;
+    padding: 0.4em 0.8em;
+    transition: transform 0.2s ease, background-color 0.2s ease; /* Efek hover */
+}
+
+.badge:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
+    background-color: #0d6efd; /* Warna biru lebih terang */
+}
+
+/* Navbar Brand */
+.navbar-brand img {
+    margin-right: 8px;
+    width: 30px; /* Pastikan ukuran logo konsisten */
+    height: 30px;
+    transition: transform 0.2s ease; /* Efek hover pada logo */
+}
+
+.navbar-brand img:hover {
+    transform: rotate(10deg); /* Efek rotasi saat hover */
+}
+
+.navbar-brand span {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #ffffff; /* Pastikan teks terlihat jelas */
+}
+
+/* Footer Styling */
+footer {
+    font-size: 0.9em;
+    padding: 1em 0;
+    background-color: #f8f9fa; /* Warna latar footer lebih lembut */
+    border-top: 1px solid #ddd; /* Garis pemisah footer */
+}
+
+footer a {
+    text-decoration: none;
+    color: #0d6efd; /* Warna biru untuk link */
+    transition: color 0.2s ease; /* Efek hover pada link */
+}
+
+footer a:hover {
+    color: #0b5ed7; /* Warna biru lebih gelap saat hover */
+}
+
+/* Media Query untuk Responsivitas */
+@media (max-width: 768px) {
+    .navbar-brand span {
+        display: none; /* Sembunyikan teks branding pada layar kecil */
+    }
+
+    .table-responsive {
+        max-height: 400px; /* Kurangi tinggi tabel pada layar kecil */
+    }
+}

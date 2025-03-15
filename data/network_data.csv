@@ -1,0 +1,12 @@
+duration,protocol_type,service,flag,src_bytes,dst_bytes,land,wrong_fragment
+0,tcp,http,SF,181,5450,0,0
+0,udp,private,SF,1000,1000,0,0
+1,tcp,ftp,SF,500,500,0,0
+2,icmp,eco_i,SF,0,0,0,1
+3,tcp,smtp,SF,200,1500,0,0
+4,udp,domain,SF,300,300,0,0
+5,tcp,ssh,SF,100,200,0,0
+6,icmp,eco_i,SF,0,0,0,1
+7,tcp,ftp_data,SF,1000,2000,0,0
+8,udp,ntp_u,SF,50,50,0,0
+9,tcp,telnet,SF,250,250,0,0

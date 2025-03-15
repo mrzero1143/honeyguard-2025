@@ -1,0 +1,22 @@
+# Flask Framework
+Flask>=3.0.2  # Framework web untuk dashboard
+
+# Paramiko untuk SSH honeypot
+paramiko>=3.4.0  # Library untuk emulasi layanan SSH
+
+# Cryptography untuk enkripsi log
+cryptography>=42.0.0  # Enkripsi end-to-end untuk log
+
+# Machine Learning
+scikit-learn>=1.3.2  # Model ML untuk deteksi anomali
+pandas>=2.1.4  # Manipulasi data untuk pelatihan model
+joblib>=1.3.2  # Serialisasi model ML
+
+# Tambahan
+pycryptodome>=3.20.0  # Library tambahan untuk enkripsi (opsional)
+
+# Pengelolaan Environment Variable
+python-dotenv>=1.0.0  # Mengelola file .env untuk konfigurasi
+
+# Opsional: Untuk mendukung CORS (jika diperlukan)
+flask-cors>=4.0.0  # Mendukung Cross-Origin Resource Sharing di Flask

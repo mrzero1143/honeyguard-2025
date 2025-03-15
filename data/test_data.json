@@ -1,0 +1,16 @@
+[
+    {
+        "duration": 0,
+        "src_bytes": 1000,
+        "dst_bytes": 5000,
+        "land": 0,
+        "wrong_fragment": 0
+    },
+    {
+        "duration": 1,
+        "src_bytes": 100,
+        "dst_bytes": 500,
+        "land": 1,
+        "wrong_fragment": 1
+    }
+]

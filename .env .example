@@ -1,0 +1,16 @@
+# ==============================
+# Konfigurasi Umum
+# ==============================
+
+# Secret key untuk Flask (gunakan nilai unik di produksi)
+SECRET_KEY=your_secure_secret_key_here
+
+# Key enkripsi untuk log (gunakan nilai 32-byte/Base64 di produksi)
+LOG_ENCRYPTION_KEY=FpUlhjklTKbyQDsjsJ1JfsrwURYkYTY1twAi2KjQGHc=
+
+# ==============================
+# Catatan Penting
+# ==============================
+# - Jangan gunakan nilai default di lingkungan produksi!
+# - Pastikan LOG_ENCRYPTION_KEY adalah string 32-byte (Base64).
+# - SECRET_KEY harus unik dan rahasia untuk keamanan aplikasi.
